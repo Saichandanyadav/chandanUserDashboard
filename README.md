@@ -1,12 +1,16 @@
 # Chandan User Management Dashboard
 
-![React](https://img.shields.io/badge/React-17.0.2-blue?logo=react&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-18.15.0-green?logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-4.18.2-lightgrey?logo=express&logoColor=black)
-![MongoDB](https://img.shields.io/badge/MongoDB-6.0.6-green?logo=mongodb&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-
 A full-featured **User Management Dashboard** built with **React.js** (frontend) and **Node.js + Express** (backend). The app allows users to **view, add, edit, and delete users** with responsive, mobile-friendly UI, along with advanced filtering, sorting, and search functionalities.
+
+## Live Demo
+
+- **Frontend:** [https://chandan-user-dashboard.vercel.app/](https://chandan-user-dashboard.vercel.app/)
+- **Backend:** [https://chandanuserdashboard.onrender.com/](https://chandanuserdashboard.onrender.com/)
+
+## GitHub Repository
+
+[https://github.com/Saichandanyadav/chandanUserDashboard](https://github.com/Saichandanyadav/chandanUserDashboard)
+
 
 ## Features
 
@@ -39,7 +43,7 @@ A full-featured **User Management Dashboard** built with **React.js** (frontend)
 ```
 
 chandan-user-management-dashboard/
-├── backend/
+├── chandan-backend/
 │   ├── config/
 │   ├── controllers/
 │   ├── models/
@@ -65,7 +69,7 @@ chandan-user-management-dashboard/
 
 ### Backend
 ```bash
-cd backend
+cd chandan-backend
 npm install
 npm run dev
 ````
@@ -86,6 +90,44 @@ npm start
 4. Click **Add User** to create a new user
 5. Click a user to **view details**
 6. Click **Edit** to update user information
+
+## OpenCage Geolocation API
+
+The frontend automatically fetches **latitude and longitude** based on the user's Zip code using the OpenCage Geocoding API:
+
+1. Sign up at [https://opencagedata.com/](https://opencagedata.com/) and get a free API key.
+2. Make a GET request like this:
+
+```javascript
+https://api.opencagedata.com/geocode/v1/json?q=<ZIPCODE>&key=<YOUR_API_KEY>
+```
+
+3. Parse the response to get the `latitude` and `longitude`.
+4. The app automatically updates the city, state, and geo-coordinates when the user enters a Zip code.
+
+### How It Works
+
+```
+User enters Zip Code
+         |
+         v
+   Frontend JS
+      fetch()
+         |
+         v
+  OpenCage API
+         |
+         v
+  Response JSON
+  ┌───────────────────────────────┐
+  │ components: { city, state }  │
+  │ geometry: { lat, lng }       │
+  └───────────────────────────────┘
+         |
+         v
+  Populate Form Fields
+(city, state, lat, lng)
+```
 
 ## API Endpoints
 
