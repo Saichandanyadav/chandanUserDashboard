@@ -1,0 +1,146 @@
+.user-list {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-list-header {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-list-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2f3640;
+  margin-bottom: 5px;
+}
+
+.underline {
+  width: 80px;
+  height: 4px;
+  background: #ff6a00;
+  border-radius: 3px;
+}
+
+.filters-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.search-input, .sort-dropdown {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.sort-dropdown {
+  display: block;
+}
+
+.btn-reset-icon {
+  cursor: pointer;
+  color: #e84118;
+  transition: all 0.3s ease;
+}
+
+.btn-reset-icon:hover {
+  color: #c23616;
+}
+
+.mobile-filter-menu {
+  display: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.sort-menu {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.sort-menu div {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.sort-menu div:hover {
+  background: #f1f1f1;
+}
+
+.user-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.no-users {
+  margin-top: 50px;
+  font-size: 20px;
+  color: #2f3640;
+  background: #fff;
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .user-list {
+    padding: 25px 15px;
+  }
+
+  .user-list-header h2 {
+    font-size: 24px;
+  }
+
+  .filters-container {
+    justify-content: space-between;
+  }
+
+  .search-input {
+    flex: 1 1 auto;
+  }
+
+  .sort-dropdown {
+    display: none;
+  }
+
+  .mobile-filter-menu {
+    display: block;
+  }
+
+  .btn-reset-icon {
+    margin-left: 8px;
+  }
+
+  .user-list-grid {
+    padding: 15px;
+    gap: 15px;
+  }
+}

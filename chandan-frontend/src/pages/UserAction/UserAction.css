@@ -1,0 +1,95 @@
+.user-action-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.user-action-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.6s ease;
+}
+
+.user-action-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2f3640;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.user-action-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-action-card input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.user-action-card input:focus {
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: 0 0 5px rgba(106,17,203,0.5);
+}
+
+.user-action-card button {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-action-card button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .user-action-card {
+    padding: 20px;
+  }
+
+  .user-action-card h2 {
+    font-size: 24px;
+  }
+
+  .user-action-card input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .user-action-card button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
